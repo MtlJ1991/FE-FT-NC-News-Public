@@ -30,7 +30,7 @@ class App extends Component {
                 </div>
               </nav>
 
-        <Home articles={this.state.articles}/>
+        <Home articles={this.state.articles} changeVote={this.changeVote}/>
       </div>
     );
   }
@@ -42,6 +42,17 @@ class App extends Component {
       this.setState(
        this.articles = articles
       )
+    })
+  }
+
+  changeVote = (i, inc) => {
+    let articleCopy = this.state.articles.slice(0);
+    let oneCopy = Object.assign({}, articleCopy[i])
+    oneCopy.votes += inc;
+    articleCopy[i] = oneCopy;
+    console.log(articleCopy[i].votes)
+    this.setState({
+      articles: articleCopy
     })
   }
 }

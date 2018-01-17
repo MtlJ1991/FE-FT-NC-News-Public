@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = ({articles}) => {
+const Home = ({articles, changeVote}) => {
       console.log(articles);
   return (
     <div className='homeMain'>
@@ -14,8 +14,8 @@ const Home = ({articles}) => {
             <span><p className="card-title" key={i}>Author:  {article.created_by}</p>
               <p className="card-title" key={i}>Comments:  {article.comments}</p>
               <p className="card-title" key={i}>Votes:  {article.votes}</p>
-              <i className='fa fa-angle-up fa-1g upDown' aria-hidden="true"></i>
-              <i className='fa fa-angle-down fa-1g upDown' aria-hidden="true"></i></span>
+              <i className='fa fa-angle-up fa-1g up' aria-hidden="true" onClick={ () => changeVote(i, 1)}></i>
+              <i className='fa fa-angle-down fa-1g down' aria-hidden="true" onClick={ () => changeVote(i, -1)}></i></span>
           </div>
         </div>;
       })}
