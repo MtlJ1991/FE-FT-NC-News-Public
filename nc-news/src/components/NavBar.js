@@ -1,4 +1,5 @@
 import React from 'react';
+import articlesByTopic from '../Api';
 
 
 const NavBar = () => {
@@ -13,9 +14,10 @@ const NavBar = () => {
                 
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <a className="nav-item nav-link" href="home" style={{'align':'left'}}>Home <span className="sr-only">(current)</span></a>
-            <a className="nav-item nav-link" href="about">Topics</a>
-            <a className="nav-item nav-link" href="topics">Articles</a>
+            <a className="nav-item nav-link" href="/" style={{'align':'left'}}>Home <span className="sr-only">(current)</span></a>
+            <a className="nav-item nav-link" href="/football">Football articles</a>
+            <a className="nav-item nav-link" href="/cooking">Cooking articles</a>
+            <a className="nav-item nav-link" href="/coding">Coding articles</a>
           </div>
         </div>
       </nav>
@@ -25,3 +27,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+

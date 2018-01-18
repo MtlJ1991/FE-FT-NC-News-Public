@@ -1,8 +1,8 @@
 import React from 'react';
-import {fetchArticles, changeVote} from '../Api';
+import {articlesByTopic, fetchArticles, changeTopicVote} from '../Api';
 
 
-class HomePage extends React.Component {
+class TopicsPage extends React.Component {
 
     state = {
         loading: true,
@@ -10,7 +10,7 @@ class HomePage extends React.Component {
     }
 
     componentDidMount() {
-        fetchArticles().then(body => {
+        articlesByTopic(this.props.match.params.topic).then(body => {
           this.setState({ articles: body.articles, loading: false });
         });
       }
@@ -29,8 +29,8 @@ class HomePage extends React.Component {
                     <span><p className="card-title" key={article._id}>Author:  {article.created_by}</p>
                       <p className="card-title" key={article._id}>Comments:  {article.comments}</p>
                       <p className="card-title" key={article._id}>Votes:  {article.votes}</p>
-                      <i className='fa fa-angle-up fa-1g up' aria-hidden="true" onClick={ () => changeVote(article._id, 'up').then((articles) => {this.setState({articles: articles.articles})})}></i>
-                      <i className='fa fa-angle-down fa-1g down' aria-hidden="true" onClick={ () => changeVote(article._id, 'down').then((articles) => {this.setState({articles: articles.articles})})}></i>
+                      <i className='fa fa-angle-up fa-1g up' aria-hidden="true" onClick={ () => changeTopicVote(this.props.match.params.topic,article._id, 'up').then((body) => {this.setState({articles: body.articles})})}></i>
+                      <i className='fa fa-angle-down fa-1g down' aria-hidden="true" onClick={ () => changeTopicVote(this.props.match.params.topic,article._id, 'down').then((body) => {this.setState({articles: body.articles})})}></i>
                       <p className="card-title" key={article._id}>Topic:  {article.belongs_to}</p>
 
                       </span>
@@ -45,4 +45,4 @@ class HomePage extends React.Component {
 
 }
 
-export default HomePage;
+export default TopicsPage

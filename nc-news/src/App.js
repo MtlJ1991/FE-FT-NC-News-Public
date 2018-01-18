@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage'
+import TopicsPage from './components/TopicsPage'
 import {fetchArticles} from './Api';
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -12,8 +13,6 @@ class App extends Component {
     articles: []
   }
 
-
-
   render() {
     return (
       <BrowserRouter>
@@ -21,6 +20,10 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/:topic" component={TopicsPage} />
+        {/* <Route exact path="/cooking" component={CookingPage} />
+        <Route exact path="/coding" component={CodingPage} />  */}
+
 
         {/* <Home articles={this.state.articles} changeVote={this.changeVote}/> */}
       </div>
