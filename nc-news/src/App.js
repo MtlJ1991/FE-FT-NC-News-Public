@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Home from './components/home'
+import NavBar from './components/NavBar';
+import HomePage from './components/HomePage'
+import {fetchArticles} from './Api';
+import { BrowserRouter, Route } from "react-router-dom";
+
 
 class App extends Component {
 
@@ -8,54 +12,30 @@ class App extends Component {
     articles: []
   }
 
-  componentDidMount() {
-    this.fetchArticles()
-  }
+
 
   render() {
     return (
-      <div className="App">
-        <nav class="navbar navbar-toggleable-md navbar navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#"> <img src="https://northcoders.com/images/logos/learn_to_code_manchester_original_second.png" width="350" height="70" alt=""/></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#home" style={{'align':'left'}}>Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#about">Topics</a>
-                    <a class="nav-item nav-link" href="#whoami">Articles</a>
-                  </div>
-                </div>
-              </nav>
+      <BrowserRouter>
 
-        <Home articles={this.state.articles} changeVote={this.changeVote}/>
+      <div className="App">
+        <NavBar />
+        <Route exact path="/" component={HomePage} />
+
+        {/* <Home articles={this.state.articles} changeVote={this.changeVote}/> */}
       </div>
+
+      </BrowserRouter>
     );
   }
-  fetchArticles = () => {
-    // return fetch(`process.env.${REACT_APP_API_DEVELOPMENT}/articles`)
-    return fetch('https://northcoders-news-api.herokuapp.com/api/articles', {method: 'GET'})
-    .then(res => res.json())
-    .then(articles => {
-      this.setState(
-       this.articles = articles
-      )
-    })
-  }
 
-  changeVote = (i, inc) => {
-    let articleCopy = this.state.articles.slice(0);
-    let oneCopy = Object.assign({}, articleCopy[i])
-    oneCopy.votes += inc;
-    articleCopy[i] = oneCopy;
-    console.log(articleCopy[i].votes)
-    this.setState({
-      articles: articleCopy
-    })
-  }
 }
 
 
 export default App;
+
+
+
+{/* <BrowserRouter>
+<Route exact path='/' component={homePage} />
+</BrowserRouter> */}

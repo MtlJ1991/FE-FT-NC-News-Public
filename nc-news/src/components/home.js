@@ -5,8 +5,8 @@ const Home = ({articles, changeVote}) => {
   return (
     <div className='homeMain'>
       {articles.map((article, i) => {
-        return <div className="card" key={i}>
-          <div className="card-body" key={i}>
+        return <div className="card" key={'idivA'}>
+          <div className="card-body" key={'idivB'}>
             <h3>{article.title}</h3>
             <p className="card-text" key={i}>{article.body}</p>
           </div>
