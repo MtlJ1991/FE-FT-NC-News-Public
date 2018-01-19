@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage'
 import TopicsPage from './components/TopicsPage'
+import CommentsPage from './components/CommentsPage'
 import {fetchArticles} from './Api';
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -21,8 +22,8 @@ class App extends Component {
         <NavBar />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/:topic" component={TopicsPage} />
-        {/* <Route exact path="/cooking" component={CookingPage} />
-        <Route exact path="/coding" component={CodingPage} />  */}
+        <Route exact path="/:id/comments" component={CommentsPage} />
+
 
 
         {/* <Home articles={this.state.articles} changeVote={this.changeVote}/> */}

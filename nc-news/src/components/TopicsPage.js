@@ -11,6 +11,7 @@ class TopicsPage extends React.Component {
 
     componentDidMount() {
         articlesByTopic(this.props.match.params.topic).then(body => {
+          console.log(this.props)
           this.setState({ articles: body.articles, loading: false });
         });
       }

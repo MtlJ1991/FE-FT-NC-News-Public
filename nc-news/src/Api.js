@@ -16,6 +16,8 @@ export const changeVote = (id, incomingVote) => {
 };
 
 
+//////////////////////////////////////////////////  TOPICS /////////////////////////////////////////////////////////////////////
+
 export const changeTopicVote = (topic ,id, incomingVote) => {
 
   return fetch(`https://northcoders-news-api.herokuapp.com/api/articles/${id}?vote=${incomingVote}`, {method: 'PUT'})
@@ -31,3 +33,21 @@ export const articlesByTopic = (topic) => {
     });
 
 };
+
+/////////////////////////////////////////////////////// COMMENTS /////////////////////////////////////////////////////////////////
+
+export const commentsByArticle = (id) => {
+  return fetch(`https://northcoders-news-api.herokuapp.com/api/articles/${id}/comments`, {method: 'GET'})
+    .then(res => res.json())
+    .then(comments => {
+      return comments;
+    });
+
+};
+
+// export const changeCommentVote = (id, incomingVote) => {
+
+//   return fetch(`https://northcoders-news-api.herokuapp.com/api/comments/${id}?vote=${incomingVote}`, {method: 'PUT'})
+//     .then( ()  => commentsByArticle());
+
+// };
