@@ -31,7 +31,7 @@ class HomePage extends React.Component {
                       <p className="card-title" key={article._id}><i class="fa fa-heart fa-1g" aria-hidden="true"></i>   :  {article.votes}</p>
                       <i className='fa fa-angle-up fa-1g up' aria-hidden="true" onClick={ () => changeVote(article._id, 'up').then((articles) => {this.setState({articles: articles.articles})})}></i>
                       <i className='fa fa-angle-down fa-1g down' aria-hidden="true" onClick={ () => changeVote(article._id, 'down').then((articles) => {this.setState({articles: articles.articles})})}></i>
-                      <p className="card-title" key={article._id}><i class="fa fa-question fa-1g" aria-hidden="true"></i>   :  {article.belongs_to}</p>
+                      <p className="card-title" key={article._id}><a href={`/${article.belongs_to}`}><i class="fa fa-question fa-1g" aria-hidden="true"></i></a>   :  {article.belongs_to}</p>
 
                       </span>
 
