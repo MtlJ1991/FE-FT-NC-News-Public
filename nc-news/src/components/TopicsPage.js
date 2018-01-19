@@ -13,15 +13,14 @@ class TopicsPage extends React.Component {
 
     componentDidMount() {
         articlesByTopic(this.props.match.params.topic).then(body => {
-          console.log(this.props)
           this.setState({ articles: body.articles, loading: false });
         });
       }
 
       render () {
-
           return (
             <div className='homeMain'>
+              <h1>Articles</h1>
               {this.state.articles.map((article, i) => {
                 return <div className="card" key={'idivA'}>
                   <div className="card-body" key={'idivB'}>
