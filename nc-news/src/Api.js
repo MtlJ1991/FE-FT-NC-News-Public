@@ -1,5 +1,4 @@
 
-
 export const fetchArticles = () => {
 
   return fetch('https://northcoders-news-api.herokuapp.com/api/articles', {method: 'GET'})
@@ -37,6 +36,7 @@ export const articlesByTopic = (topic) => {
 /////////////////////////////////////////////////////// COMMENTS /////////////////////////////////////////////////////////////////
 
 export const commentsByArticle = (id) => {
+
   return fetch(`https://northcoders-news-api.herokuapp.com/api/articles/${id}/comments`, {method: 'GET'})
     .then(res => res.json())
     .then(comments => {
@@ -45,9 +45,9 @@ export const commentsByArticle = (id) => {
 
 };
 
-// export const changeCommentVote = (id, incomingVote) => {
+export const changeCommentVote = (article, id, incomingVote) => {
 
-//   return fetch(`https://northcoders-news-api.herokuapp.com/api/comments/${id}?vote=${incomingVote}`, {method: 'PUT'})
-//     .then( ()  => commentsByArticle());
+  return fetch(`https://northcoders-news-api.herokuapp.com/api/comments/${id}?vote=${incomingVote}`, {method: 'PUT'})
+    .then( ()  => commentsByArticle(article));
 
-// };
+};

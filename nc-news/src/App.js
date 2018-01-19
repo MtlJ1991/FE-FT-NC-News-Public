@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import HomePage from './components/HomePage'
 import TopicsPage from './components/TopicsPage'
 import CommentsPage from './components/CommentsPage'
-import {fetchArticles} from './Api';
 import { BrowserRouter, Route } from "react-router-dom";
 
 
