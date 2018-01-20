@@ -14,7 +14,7 @@ class CommentsPage extends React.Component {
     componentDidMount() {
         commentsByArticle(this.props.match.params.id).then(body => {
             // console.log(this.props.match.params._id)
-            this.setState({ comments: body.comments.sort(), loading: false });
+            this.setState({ comments: body.comments, loading: false });
         });
     }
 

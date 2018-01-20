@@ -45,10 +45,9 @@ export const commentsByArticle = (id) => {
 
 };
 
-export const changeCommentVote = (article, id, incomingVote) => {
-
+export const changeCommentVote = (articleId, id, incomingVote) => {
   return fetch(`https://northcoders-news-api.herokuapp.com/api/comments/${id}?vote=${incomingVote}`, {method: 'PUT'})
-    .then( ()  => commentsByArticle(article));
+    .then( ()  => commentsByArticle(articleId));
 
 };
 
