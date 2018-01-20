@@ -42,3 +42,8 @@ body {
   color: tomato;
   transform: scale(1.5);
 }
+
+.trash:hover{
+  color: tomato;
+  transform: scale(1.5);
+}

@@ -62,8 +62,14 @@ export const addComment = (id, newComment) => {
     body: JSON.stringify({
       comment: newComment
     })
+    
+    
+  })
+    .then( ()  => commentsByArticle(id));
 
- 
-  });
+};
 
+export const deleteComment = (id, commentId) => {
+  return fetch(`https://northcoders-news-api.herokuapp.com/api/comments/${commentId}`, {method: 'DELETE'})
+    .then( ()  => commentsByArticle(id));
 };

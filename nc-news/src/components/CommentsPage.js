@@ -1,5 +1,5 @@
 import React from 'react';
-import {commentsByArticle, changeCommentVote, addComment} from '../Api';
+import {commentsByArticle, changeCommentVote, addComment, deleteComment} from '../Api';
 
 
 class CommentsPage extends React.Component {
@@ -14,7 +14,7 @@ class CommentsPage extends React.Component {
     componentDidMount() {
         commentsByArticle(this.props.match.params.id).then(body => {
             // console.log(this.props.match.params._id)
-            this.setState({ comments: body.comments, loading: false });
+            this.setState({ comments: body.comments.sort(), loading: false });
         });
     }
 
@@ -59,6 +59,7 @@ class CommentsPage extends React.Component {
                     <p className="card-title" key={comment._id}><i class="fa fa-heart fa-1g" aria-hidden="true"></i>   :  {comment.votes}</p>
                     <i className='fa fa-angle-up fa-1g up' aria-hidden="true" onClick={ () => changeCommentVote(this.props.match.params.id,comment._id, 'up').then((body) => {this.setState({comments: body.comments})})}></i>
                     <i className='fa fa-angle-down fa-1g down' aria-hidden="true" onClick={ () => changeCommentVote(this.props.match.params.id,comment._id, 'down').then((body) => {this.setState({comments: body.comments})})}></i>
+                    <i className='fa fa-trash fa-1g trash' aria-hidden="true" style={{"padding-left": "30px"}}onClick={ () => deleteComment(this.props.match.params.id, comment._id).then((body) => {this.setState({comments: body.comments})})}></i>
 
                     </span>
 
