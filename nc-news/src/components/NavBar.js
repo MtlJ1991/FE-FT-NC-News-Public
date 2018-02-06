@@ -1,5 +1,4 @@
 import React from 'react';
-import articlesByTopic from '../Api';
 
 
 const NavBar = () => {

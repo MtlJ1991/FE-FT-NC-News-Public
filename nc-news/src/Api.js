@@ -72,3 +72,16 @@ export const deleteComment = (id, commentId) => {
   return fetch(`https://northcoders-news-api.herokuapp.com/api/comments/${commentId}`, {method: 'DELETE'})
     .then( ()  => commentsByArticle(id));
 };
+
+
+////////////////////////////////////////////////////////////////// USERS ////////////////////////////////////////////////////////////////////////
+
+export const getUserDetails = (userName) => {
+  return fetchArticles(`https://northcoders-news-api.herokuapp.com/api/users/${userName}`, {method: 'GET'})
+    .then(res => res.json())
+    .then(details => {
+      console.log(details);
+      return details;
+    });
+
+};

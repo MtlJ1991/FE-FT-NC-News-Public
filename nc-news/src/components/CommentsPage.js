@@ -49,17 +49,17 @@ class CommentsPage extends React.Component {
 
             {this.state.comments.map((comment, i) => {
                 // {console.log(comment._id)}
-                return <div className="card" key={'idivA'}>
-                <div className="card-body" key={'idivB'}>
+                return <div className="card" key={i + 2246536}>
+                <div className="card-body" key={i + 23643652}>
                   <h3>{comment.title}</h3>
-                  <p className="card-text" key={comment._id}>{comment.body}</p>
+                  <p className="card-text" key={i + 4764}>{comment.body}</p>
                 </div>
-                <div className="card-header" key={comment._id}>
-                  <span><p className="card-title" key={comment._id}><i class="fa fa-user fa-1g" aria-hidden="true"></i>   :  {comment.created_by}</p>
-                    <p className="card-title" key={comment._id}><i class="fa fa-heart fa-1g" aria-hidden="true"></i>   :  {comment.votes}</p>
+                <div className="card-header" key={i + 2245647}>
+                  <span><p className="card-title" key={i + 24756742}><i className="fa fa-user fa-1g" aria-hidden="true"></i>   :  {comment.created_by}</p>
+                    <p className="card-title" key={i + 24756472}><i className="fa fa-heart fa-1g" aria-hidden="true"></i>   :  {comment.votes}</p>
                     <i className='fa fa-angle-up fa-1g up' aria-hidden="true" onClick={ () => changeCommentVote(this.props.match.params.id,comment._id, 'up').then((body) => {this.setState({comments: body.comments})})}></i>
                     <i className='fa fa-angle-down fa-1g down' aria-hidden="true" onClick={ () => changeCommentVote(this.props.match.params.id,comment._id, 'down').then((body) => {this.setState({comments: body.comments})})}></i>
-                    <i className='fa fa-trash fa-1g trash' aria-hidden="true" style={{"padding-left": "30px"}}onClick={ () => deleteComment(this.props.match.params.id, comment._id).then((body) => {this.setState({comments: body.comments})})}></i>
+                    <i className='fa fa-trash fa-1g trash' aria-hidden="true" style={{"paddingLeft": "30px"}}onClick={ () => deleteComment(this.props.match.params.id, comment._id).then((body) => {this.setState({comments: body.comments})})}></i>
 
                     </span>
 
