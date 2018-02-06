@@ -12,6 +12,7 @@ class TopicsPage extends React.Component {
     }
 
     componentDidMount() {
+
         articlesByTopic(this.props.match.params.topic).then(body => {
           this.setState({ articles: body.articles, loading: false });
         });
@@ -20,7 +21,7 @@ class TopicsPage extends React.Component {
       render () {
           return (
             <div className='homeMain'>
-              <h1>Articles</h1>
+              <h1>{this.props.match.params.topic} articles.</h1>
               {this.state.articles.map((article, i) => {
                 return <div className="card" key={i + 25325432541}>
                   <div className="card-body" key={i + 47654752}>

@@ -76,12 +76,19 @@ export const deleteComment = (id, commentId) => {
 
 ////////////////////////////////////////////////////////////////// USERS ////////////////////////////////////////////////////////////////////////
 
-export const getUserDetails = (userName) => {
-  return fetchArticles(`https://northcoders-news-api.herokuapp.com/api/users/${userName}`, {method: 'GET'})
+export const getUserDetails = (username) => {
+  return fetch(`https://northcoders-news-api.herokuapp.com/api/users/${username}`, {method: 'GET'})
     .then(res => res.json())
     .then(details => {
-      console.log(details);
       return details;
     });
 
+};
+
+export const getUserRepos = (username) => {
+  return fetch(`https://northcoders-news-api.herokuapp.com/api/users/${username}/repos`, {method: 'GET'})
+    .then(res => res.json())
+    .then(repos => {
+      return repos;
+    });
 };

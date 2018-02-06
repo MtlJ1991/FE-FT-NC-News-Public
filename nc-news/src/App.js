@@ -25,7 +25,7 @@ class App extends Component {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/:topic" component={TopicsPage} />
         <Route exact path="/:id/comments" component={CommentsPage} />
-        <Route exact path="/user/:username" component={UsersPage} />
+        <Route exact path="/users/:username" component={UsersPage} />
 
 
 

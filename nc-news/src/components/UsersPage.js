@@ -1,45 +1,49 @@
 import React from 'react';
-import {getUserDetails} from '../Api';
+import {getUserDetails, getUserRepos} from '../Api';
 
 
 
 class UsersPage extends React.Component {
 
     state = {
+        loading: true,
         name: '',
         username: '',
         userimg: ''
     }
 
     componentDidMount() {
+
         getUserDetails(this.props.match.params.username).then(body => {
-          this.setState({ 
-              name: 'details.name',
-              username: 'details.username',
-              userimg: 'details.avatar_url'
-           });
+            console.log(body.users[0].username)
+            this.setState({ 
+                name: body.users[0].name,
+                username: body.users[0].username,
+                userimg: body.users[0].avatar_url,
+                loading: false
+            });
         });
-      }
+    }
+    
+    render () {
 
-      render () {
+        console.log(this.state)
 
-          console.log(this.props.match.params.username)
-          return (
+        
+        return (
             <div className='homeMain'>
-                <h1>User: </h1>
-                <p>{this.state.name}</p>
+            
+            <h1>{this.state.name}</h1>
+
+            
+            <div className="card">
+            <img src={this.state.userimg} alt="Smiley face" height="55" width="55" style={{'float':'right'}}/>
+
+                <p >{this.state.name}</p>
                 <p>{this.state.username}</p>
 
-                <form className="form-inline">
-                 
-                 <div className="form-group mx-sm-3 mb-2">
-                     <label htmlFor="inputPassword2" className="sr-only" >Write a comment...</label>
-                     <input type="text" className="form-control" id="inputPassword2" placeholder="Write a comment..." value={this.state.newComment} onChange={this.handleChange}/>
-                 </div>
-                 <button className="btn btn-primary mb-2" onClick={this.handleClick}>Submit</button>
-                 </form>
-
-
+    
+            </div>
             </div>
           );
       }
