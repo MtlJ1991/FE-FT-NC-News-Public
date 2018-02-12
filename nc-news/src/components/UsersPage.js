@@ -15,11 +15,11 @@ class UsersPage extends React.Component {
     componentDidMount() {
 
         getUserDetails(this.props.match.params.username).then(body => {
-            console.log(body.users[0].username)
+            console.log(body)
             this.setState({ 
-                name: body.users[0].name,
-                username: body.users[0].username,
-                userimg: body.users[0].avatar_url,
+                name: body.user[0].name,
+                username: body.user[0].username,
+                userimg: body.user[0].avatar_url,
                 loading: false
             });
         });

@@ -10,6 +10,7 @@ export const fetchArticles = () => {
 };
 
 export const changeVote = (id, incomingVote) => {
+  console.log(id, incomingVote);
   return fetch(`https://quiet-meadow-47556.herokuapp.com/api/articles/${id}?vote=${incomingVote}`, {method: 'PUT'})
     .then( ()  => fetchArticles());
 };
