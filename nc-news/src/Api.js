@@ -1,7 +1,7 @@
 
 export const fetchArticles = () => {
 
-  return fetch('https://northcoders-news-api.herokuapp.com/api/articles', {method: 'GET'})
+  return fetch('https://quiet-meadow-47556.herokuapp.com/api/articles', {method: 'GET'})
     .then(res => res.json())
     .then(articles => {
       return articles;
@@ -10,7 +10,7 @@ export const fetchArticles = () => {
 };
 
 export const changeVote = (id, incomingVote) => {
-  return fetch(`https://northcoders-news-api.herokuapp.com/api/articles/${id}?vote=${incomingVote}`, {method: 'PUT'})
+  return fetch(`https://quiet-meadow-47556.herokuapp.com/api/articles/${id}?vote=${incomingVote}`, {method: 'PUT'})
     .then( ()  => fetchArticles());
 };
 
@@ -19,9 +19,12 @@ export const changeVote = (id, incomingVote) => {
 
 
 export const articlesByTopic = (topic) => {
-  return fetch(`https://northcoders-news-api.herokuapp.com/api/topics/${topic}/articles`, {method: 'GET'})
+  console.log(topic)
+  topic =  topic.charAt(0).toUpperCase() + topic.slice(1);
+  return fetch(`https://quiet-meadow-47556.herokuapp.com/api/topics/${topic}/articles`, {method: 'GET'})
     .then(res => res.json())
     .then(articles => {
+      console.log(articles)
       return articles;
     });
   
@@ -29,7 +32,7 @@ export const articlesByTopic = (topic) => {
 
 export const changeTopicVote = (topic ,id, incomingVote) => {
 
-  return fetch(`https://northcoders-news-api.herokuapp.com/api/articles/${id}?vote=${incomingVote}`, {method: 'PUT'})
+  return fetch(`https://quiet-meadow-47556.herokuapp.com/api/articles/${id}?vote=${incomingVote}`, {method: 'PUT'})
     .then( ()  => articlesByTopic(topic));
 
 };
@@ -37,7 +40,7 @@ export const changeTopicVote = (topic ,id, incomingVote) => {
 
 export const commentsByArticle = (id) => {
 
-  return fetch(`https://northcoders-news-api.herokuapp.com/api/articles/${id}/comments`, {method: 'GET'})
+  return fetch(`https://quiet-meadow-47556.herokuapp.com/api/articles/${id}/comments`, {method: 'GET'})
     .then(res => res.json())
     .then(comments => {
       return comments;
@@ -46,14 +49,14 @@ export const commentsByArticle = (id) => {
 };
 
 export const changeCommentVote = (articleId, id, incomingVote) => {
-  return fetch(`https://northcoders-news-api.herokuapp.com/api/comments/${id}?vote=${incomingVote}`, {method: 'PUT'})
+  return fetch(`https://quiet-meadow-47556.herokuapp.com/api/comments/${id}?vote=${incomingVote}`, {method: 'PUT'})
     .then( ()  => commentsByArticle(articleId));
 
 };
 
 export const addComment = (id, newComment) => {
   console.log(newComment,'****************', id);
-  return fetch(`https://northcoders-news-api.herokuapp.com/api/articles/${id}/comments`, {
+  return fetch(`https://quiet-meadow-47556.herokuapp.com/api/articles/${id}/comments`, {
     method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/json'
@@ -69,7 +72,7 @@ export const addComment = (id, newComment) => {
 };
 
 export const deleteComment = (id, commentId) => {
-  return fetch(`https://northcoders-news-api.herokuapp.com/api/comments/${commentId}`, {method: 'DELETE'})
+  return fetch(`https://quiet-meadow-47556.herokuapp.com/api/comments/${commentId}`, {method: 'DELETE'})
     .then( ()  => commentsByArticle(id));
 };
 
@@ -77,7 +80,7 @@ export const deleteComment = (id, commentId) => {
 ////////////////////////////////////////////////////////////////// USERS ////////////////////////////////////////////////////////////////////////
 
 export const getUserDetails = (username) => {
-  return fetch(`https://northcoders-news-api.herokuapp.com/api/users/${username}`, {method: 'GET'})
+  return fetch(`https://quiet-meadow-47556.herokuapp.com/api/users/${username}`, {method: 'GET'})
     .then(res => res.json())
     .then(details => {
       return details;
@@ -86,7 +89,7 @@ export const getUserDetails = (username) => {
 };
 
 export const getUserRepos = (username) => {
-  return fetch(`https://northcoders-news-api.herokuapp.com/api/users/${username}/repos`, {method: 'GET'})
+  return fetch(`https://quiet-meadow-47556.herokuapp.com/api/users/${username}/repos`, {method: 'GET'})
     .then(res => res.json())
     .then(repos => {
       return repos;
