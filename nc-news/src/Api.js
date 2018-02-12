@@ -25,7 +25,6 @@ export const articlesByTopic = (topic) => {
   return fetch(`https://quiet-meadow-47556.herokuapp.com/api/topics/${topic}/articles`, {method: 'GET'})
     .then(res => res.json())
     .then(articles => {
-      console.log(articles)
       return articles;
     });
   
@@ -63,12 +62,12 @@ export const addComment = (id, newComment) => {
       'Content-Type': 'application/json'
     }),
     body: JSON.stringify({
-      comment: newComment
+      body: newComment
     })
     
     
   })
-    .then( ()  => commentsByArticle(id));
+  .then( ()  => commentsByArticle(id));
 
 };
 
