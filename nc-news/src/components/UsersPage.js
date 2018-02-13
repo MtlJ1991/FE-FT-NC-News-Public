@@ -33,14 +33,14 @@ class UsersPage extends React.Component {
         return (
             <div className='homeMain'>
             
-            <h1>{this.state.name}</h1>
+            <h1 className='userTitle'>{this.state.name}</h1>
 
             
             <div className="card">
-            <img src={this.state.userimg} alt="Smiley face" height="55" width="55" style={{'float':'right'}}/>
+            <img  className='userImg' src={this.state.userimg} alt="Smiley face"/>
 
-                <p >{this.state.name}</p>
-                <p>{this.state.username}</p>
+                <p className='userName'>{this.state.name}</p>
+                <p className='user'>{this.state.username}</p>
 
     
             </div>
