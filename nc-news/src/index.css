@@ -5,14 +5,28 @@ body {
   /* font-family: 'Orbitron', sans-serif; */
 
 }
-
-.navigation{
+.navigation {
+  background-color: aliceblue;
   grid-column-start: 1;
   grid-column-end: 13;
-  grid-row-start: 1;
-  grid-row-end: 2;
   font-size: 25px;
+}
+.navbarNav img {
+  width: 450px;
+  height: 90;
+}
 
+.nav-item {
+ color: black;
+}
+
+.nav-item:hover {
+  color: #c31433;
+  text-decoration: none;
+}
+
+.nav-item:active {
+  color: #c31433;
 }
 
 .homeMain {
@@ -194,17 +208,36 @@ i {
   
   }
 
-  .navigation{
-    grid-column-start: 1;
-    grid-column-end: 13;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    font-size: 15px;
-  }
-
   .form {
     padding-left: 15%;
     padding-bottom: 10%;
+  }
+
+
+  .navigation {
+    background-color: aliceblue;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    font-size: 10px;
+  }
+
+  .nav-item {
+    color: black;
+   }
+   
+   .nav-item:hover {
+     color: #c31433;
+     text-decoration: none;
+   }
+   
+   .nav-item:active {
+     color: #c31433;
+   }
+   
+  .navbarNav img {
+    width: 250px;
+    height: 90;
+    
   }
   
 }
