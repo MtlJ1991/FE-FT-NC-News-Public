@@ -6,9 +6,13 @@ body {
 
 }
 
-/* .navbar-toggler{
-  display: inline;
-} */
+.navigation{
+  grid-column-start: 1;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+}
 
 .homeMain {
   grid-column-start: 1;
@@ -16,6 +20,18 @@ body {
   color: black;
   font-size: 15px;
   text-align: left;
+  grid-row-start: 4; 
+
+}
+
+.homeMain h1 {
+  padding-bottom: 100px;
+  padding-top: 100px;
+
+  text-align: center;
+  font-size: 45px;
+  color: rgb(48, 22, 22);
+
 }
 
 .card-title{
@@ -51,25 +67,40 @@ body {
   transform: scale(1.5);
 }
 
-.userName{
-  color: red;
-  text-align: center;
-
-}
 
 .user{
+  
   color: red;
   text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 13;
+  grid-row-start: 5;
 
 }
 
-.userIMG{
+.user img {
   color: red;
-  text-align: right;
-  width:240px; /* you can use % */
-  height: auto;
+ height: 300px;
+ width: 300px;
+
 }
 
 .userTitle{
+  float: center;
+  color: black;
+  grid-column-start: 5;
+}
+
+.userName{
+  color: black;
   text-align: center;
+
+}
+
+.userUserName{
+  color: black;
+}
+
+.userCard {
+
 }

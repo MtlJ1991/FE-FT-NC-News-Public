@@ -5,8 +5,9 @@
   grid-auto-rows: minmax(50px, auto);
   font-size: 35px;
   height: 100%;
-  background-color: #DDE2C6;
+  background-color: rgb(224, 7, 7);
   color: white;
+  
 
 }
 

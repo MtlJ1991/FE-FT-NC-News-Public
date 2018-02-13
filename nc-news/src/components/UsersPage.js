@@ -15,7 +15,6 @@ class UsersPage extends React.Component {
     componentDidMount() {
 
         getUserDetails(this.props.match.params.username).then(body => {
-            console.log(body)
             this.setState({ 
                 name: body.user[0].name,
                 username: body.user[0].username,
@@ -27,20 +26,18 @@ class UsersPage extends React.Component {
     
     render () {
 
-        console.log(this.state)
-
         
         return (
-            <div className='homeMain'>
+            <div className='user'>
             
             <h1 className='userTitle'>{this.state.name}</h1>
 
             
-            <div className="card">
+            <div className="userCard">
             <img  className='userImg' src={this.state.userimg} alt="Smiley face"/>
 
                 <p className='userName'>{this.state.name}</p>
-                <p className='user'>{this.state.username}</p>
+                <p className='userUserName'>{this.state.username}</p>
 
     
             </div>

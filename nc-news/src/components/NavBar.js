@@ -4,7 +4,7 @@ import React from 'react';
 const NavBar = () => {
 
   return (
-    <div>
+    <div className='navigation'>
       <nav className="navbar navbar-toggleable-md navbar navbar-light bg-light fixed-top">
         <a className="navbar-brand" href="ncimg"> <img src="https://northcoders.com/images/logos/learn_to_code_manchester_original_second.png" width="450" height="90" alt=""/></a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
