@@ -10,6 +10,7 @@ body {
   grid-column-start: 1;
   grid-column-end: 13;
   font-size: 25px;
+ 
 }
 .navbarNav img {
   width: 450px;

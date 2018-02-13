@@ -59,7 +59,9 @@ class CommentsPage extends React.Component {
                 <p className="card-title" key={i + 24756472}><i className="fa fa-heart fa-1g" aria-hidden="true"></i>   :  {comment.votes}</p>
                     <i className='fa fa-angle-up fa-1g up' aria-hidden="true" onClick={ () => changeCommentVote(this.props.match.params.id,comment._id, 'up').then((body) => {this.setState({comments: body.comments})})}></i>
                     <i className='fa fa-angle-down fa-1g down' aria-hidden="true" onClick={ () => changeCommentVote(this.props.match.params.id,comment._id, 'down').then((body) => {this.setState({comments: body.comments})})}></i>
+                    {comment.created_by === 'northcoder' ? 
                     <i className='fa fa-trash fa-1g trash' aria-hidden="true" style={{"paddingLeft": "30px"}}onClick={ () => deleteComment(this.props.match.params.id, comment._id).then((body) => {this.setState({comments: body.comments})})}></i>
+                : ''}
 
                     </span>
 
