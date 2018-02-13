@@ -21,6 +21,9 @@ class App extends Component {
       <BrowserRouter>
 
       <div className="App">
+      <div className='login'>
+        <h5 className>Northcoder</h5>
+      </div>
         <NavBar />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/:topic" component={TopicsPage} />

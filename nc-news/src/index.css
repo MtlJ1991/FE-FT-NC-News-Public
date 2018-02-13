@@ -5,11 +5,29 @@ body {
   /* font-family: 'Orbitron', sans-serif; */
 
 }
-.navigation {
+
+nav {
+  position: fixed;
   background-color: aliceblue;
   grid-column-start: 1;
   grid-column-end: 13;
+  grid-row-start: 3;
+  grid-row-end: 4;
   font-size: 25px;
+  width: 100%;
+  z-index: 200;
+  background-color: black;
+  color: whitesmoke;
+
+
+}
+.navigation {
+  grid-column-start: 1;
+  grid-column-end: 13;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  font-size: 25px;
+  
  
 }
 .navbarNav img {
@@ -18,7 +36,8 @@ body {
 }
 
 .nav-item {
- color: black;
+ color: rgb(221, 219, 219);
+
 }
 
 .nav-item:hover {
@@ -36,7 +55,7 @@ body {
   color: black;
   font-size: 15px;
   text-align: left;
-  grid-row-start: 4; 
+  grid-row-start: 6; 
 
 }
 
@@ -198,7 +217,7 @@ i {
     color: black;
     font-size: 15px;
     text-align: left;
-    grid-row-start: 2; 
+    grid-row-start: 3; 
   
   }
   
@@ -215,15 +234,29 @@ i {
   }
 
 
-  .navigation {
+  nav {
+    position: fixed;
     background-color: aliceblue;
     grid-column-start: 1;
     grid-column-end: 13;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    font-size: 10px;
+    width: 100%;
+    z-index: 200;
+    background-color: black;
+  }
+  .navigation {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 2;
+    grid-row-end: 2;
     font-size: 10px;
   }
 
   .nav-item {
-    color: black;
+    color: rgb(221, 219, 219);
+
    }
    
    .nav-item:hover {
@@ -239,6 +272,18 @@ i {
     width: 250px;
     height: 90;
     
+  }
+
+  .login{
+    grid-column-start: 7;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+  .login h5 {
+    padding-top: 5px;
+    font-size: 10px;
+
   }
   
 }

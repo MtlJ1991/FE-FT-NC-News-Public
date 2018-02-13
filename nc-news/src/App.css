@@ -10,4 +10,28 @@
   
 }
 
+.login{
+  grid-column-start: 7;
+  grid-column-end: 13;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  font-size: 25px;
+}
 
+.login h5 {
+  
+  font-size: 20px;
+
+}
+
+@media(max-width: 700px) {
+.login{
+  grid-column-start: 7;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  font-size: 15px;
+
+}
+
+}
