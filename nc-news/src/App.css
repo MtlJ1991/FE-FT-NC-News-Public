@@ -5,15 +5,9 @@
   grid-auto-rows: minmax(50px, auto);
   font-size: 35px;
   height: 100%;
-  background-color: rgb(224, 7, 7);
+  background-color: #c31433;
   color: white;
   
-
 }
 
 
-
-@keyframes i {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
