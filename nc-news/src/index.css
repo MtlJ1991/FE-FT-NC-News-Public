@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
   /* font-family: 'Orbitron', sans-serif; */
 
 }
@@ -11,6 +11,7 @@ body {
   grid-column-end: 13;
   grid-row-start: 1;
   grid-row-end: 2;
+  font-size: 25px;
 
 }
 
@@ -29,7 +30,7 @@ body {
   padding-top: 100px;
 
   text-align: center;
-  font-size: 45px;
+  font-size: 35px;
   color: rgb(48, 22, 22);
 
 }
@@ -40,6 +41,11 @@ body {
   grid-column-start: 1;
   grid-column-end: 13;
   color: black;
+}
+
+.form {
+  padding-left: 29%;
+  padding-bottom: 10%;
 }
 
 i {
@@ -74,8 +80,6 @@ i {
 
 
 .user{
-  
-  color: red;
   text-align: center;
   grid-column-start: 1;
   grid-column-end: 13;
@@ -84,26 +88,29 @@ i {
 }
 
 .user img {
-  color: red;
- height: 300px;
- width: 300px;
+ height: 250px;
+ width: 250px;
+ border-radius: 100px;
 
 }
 
 .userTitle{
   float: center;
   color: black;
-  grid-column-start: 5;
+  font-size: 35px;
 }
 
 .userName{
   color: black;
   text-align: center;
+  font-size: 25px;
 
 }
 
 .userUserName{
   color: black;
+  font-size: 25px;
+
 }
 
 .userCard {
@@ -111,33 +118,59 @@ i {
 }
 
 
+
+
 @media(max-width: 700px) {
+
+  .App {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    font-size: 35px;
+    height: 100%;
+    background-color: hsl(349, 81%, 42%);
+    color: white;
+    
+  }
+
+  
   .homeMain h1 {
     padding-bottom: 100px;
     padding-top: 100px;
-  
     text-align: center;
-    font-size: 45px;
-    color: rgb(48, 22, 22);
+    font-size: 35px;
+    color: red;
   
   }
   
   .card-title{
-    display: inline-block;
-    padding-left: 45px;
     grid-column-start: 1;
-    grid-column-end: 13;
+    grid-column-end: 3;
     color: black;
-    font-size: 10px;
+    font-size: 11px;
+    padding-left: 25px;
+    display: inline-block; 
+  }
+
+  .card-header {
+    background-color: rgba(8, 4, 4, 0.096);
+
+  }
+  .card {
+
   }
 
   .card-body h3 {
-    font-size: 15px;
+    font-size: 19px;
+    color: rgb(217, 7, 7);
   }
 
   .card-body p {
-    font-size: 10px;
+    font-size: 13px;
+    background-color: rgba(8, 4, 4, 0.096);
   }
+
   
   img{
     width: 250px;
@@ -154,13 +187,24 @@ i {
   
   }
   
-
   .homeMain h1 {
-  
     text-align: center;
-    font-size: 45px;
+    font-size: 35px;
     color: rgb(48, 22, 22);
   
+  }
+
+  .navigation{
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    font-size: 15px;
+  }
+
+  .form {
+    padding-left: 15%;
+    padding-bottom: 10%;
   }
   
 }

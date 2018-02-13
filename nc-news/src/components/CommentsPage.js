@@ -35,16 +35,15 @@ class CommentsPage extends React.Component {
             <div className='homeMain'>
                 <h1>Comments</h1>
                 {/* <input class="form-control" type="text" placeholder="Write your comment..." readonly style={{"padding-bottom": "30px"}}onBlur={(event) => addComment(this.props.match.params.id, event)}/> */}
-
-                <form className="form-inline">
-                 
+                <div className='form'>
+                 <form className="form-inline">
                     <div className="form-group mx-sm-3 mb-2">
                         <label htmlFor="inputPassword2" className="sr-only" >Write a comment...</label>
                         <input type="text" className="form-control" id="inputPassword2" placeholder="Write a comment..." value={this.state.newComment} onChange={this.handleChange}/>
                     </div>
                     <button className="btn btn-primary mb-2" onClick={this.handleClick}>Submit</button>
-                    </form>
-
+                </form>
+                </div>
 
 
 
