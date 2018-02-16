@@ -16,7 +16,6 @@ class CommentsPage extends React.Component {
 
     componentDidMount() {
         commentsByArticle(this.props.match.params.id).then(body => {
-            // console.log(this.props.match.params._id)
             this.setState({ comments: body.comments, loading: false });
         });
     }
@@ -29,21 +28,20 @@ class CommentsPage extends React.Component {
 
     handleClick = (event) => {
         event.preventDefault();
-        addComment(this.props.match.params.id, this.state.newComment)
+        addComment(this.props.match.params.id, this.state.newComment) 
     }
     render () {
         
         return (
             <div className='homeMain'>
                 <h1>Comments</h1>
-                {/* <input class="form-control" type="text" placeholder="Write your comment..." readonly style={{"padding-bottom": "30px"}}onBlur={(event) => addComment(this.props.match.params.id, event)}/> */}
                 <div className='form'>
                  <form className="form-inline">
                     <div className="form-group mx-sm-3 mb-2">
                         <label htmlFor="inputPassword2" className="sr-only" >Write a comment...</label>
                         <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" value={this.state.newComment} onChange={this.handleChange} />
                     </div>
-                    <button className="btn btn-primary mb-2" onClick={this.handleClick}>Submit</button>
+                    <button className="btn btn-success mb-2" style={{backgroundColor: 'black', borderStyle: 'none'}} onClick={this.handleClick}>Submit</button>
                 </form>
                 </div>
 
@@ -62,9 +60,7 @@ class CommentsPage extends React.Component {
                     <i className='fa fa-angle-up fa-1g up' aria-hidden="true" onClick={ () => changeCommentVote(this.props.match.params.id,comment._id, 'up').then((body) => {this.setState({comments: body.comments})})}></i>
                     <i className='fa fa-angle-down fa-1g down' aria-hidden="true" onClick={ () => changeCommentVote(this.props.match.params.id,comment._id, 'down').then((body) => {this.setState({comments: body.comments})})}></i>
                     <p className='createdAt'>{`Created ${Moment(comment.created_at).fromNow()}`}</p>
-                    {comment.created_by === 'northcoder' ? 
-                    <i className='fa fa-trash fa-1g trash' aria-hidden="true" style={{"paddingLeft": "30px"}}onClick={ () => deleteComment(this.props.match.params.id, comment._id).then((body) => {this.setState({comments: body.comments})})}></i>
-                : ''}
+                    {comment.created_by === 'northcoder' ? <i className='fa fa-trash fa-1g trash' aria-hidden="true" style={{"paddingLeft": "30px"}}onClick={ () => deleteComment(this.props.match.params.id, comment._id).then((body) => {this.setState({comments: body.comments})})}></i>: ''}
 
                     </span>
 

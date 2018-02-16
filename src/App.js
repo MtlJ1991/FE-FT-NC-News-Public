@@ -23,7 +23,7 @@ class App extends Component {
       <div className="App">
       <div className='login'>
         <h5 >Northcoder</h5>
-        <span><img src='https://cdn-images-1.medium.com/max/1200/1*LdnSztHVYhhd8K8EqlgCJQ.png' alt='nc'/></span>
+        <span><img src='https://pbs.twimg.com/profile_images/932373124372410373/-dsqBL8m_400x400.jpg' alt='nc'/></span>
       </div>
         <NavBar />
         <Route exact path="/" component={HomePage} />
