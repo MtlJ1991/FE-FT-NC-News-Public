@@ -22,18 +22,14 @@ class App extends Component {
 
       <div className="App">
       <div className='login'>
-        <h5 className>Northcoder</h5>
+        <h5 >Northcoder</h5>
+        <span><img src='https://cdn-images-1.medium.com/max/1200/1*LdnSztHVYhhd8K8EqlgCJQ.png' alt='nc'/></span>
       </div>
         <NavBar />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/:topic" component={TopicsPage} />
         <Route exact path="/:id/comments" component={CommentsPage} />
         <Route exact path="/users/:username" component={UsersPage} />
-
-
-
-
-        {/* <Home articles={this.state.articles} changeVote={this.changeVote}/> */}
       </div>
 
       </BrowserRouter>

@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 
 
 
+
 class TopicsPage extends React.Component {
 
     state = {
@@ -29,7 +30,6 @@ class TopicsPage extends React.Component {
                     <p className="card-text" key={i + 65436543}>{article.body}</p>
                   </div>
                   <div className="card-header" key={i + 364344}>
-              
                   <span><p className="card-title" key={i + 24756742}><Link to={`users/${article.created_by}`}><i className="fa fa-user fa-1g" aria-hidden="true"></i></Link>:  {article.created_by}</p>
                   <p className="card-title" key={i + 7986975}><Link to={`${article._id}/comments`}><i className="fa fa-comments fa-1g" aria-hidden="true"></i></Link> </p>
                       <p className="card-title" key={i + 968769876}><i className="fa fa-heart fa-1g" aria-hidden="true"></i>   :  {article.votes}</p>
