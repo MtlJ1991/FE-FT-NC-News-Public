@@ -1,4 +1,3 @@
-
 export const fetchArticles = () => {
 
   return fetch('https://quiet-meadow-47556.herokuapp.com/api/articles', {method: 'GET'})
