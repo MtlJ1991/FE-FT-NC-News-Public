@@ -7,11 +7,10 @@ Welcome to the front end section of Northcoders News.
 This section of the application is the front-end. Below are a set of instructions on how to best use this application.
 This application is built using react and as such you will need to follow these instructions to make sure the application will function as inteded.
 
-### Instalation
+### Installation
 Much like the BE section, you will need the latest versions of both Node, and NPM.
 Go to the following links and follow the setup instructions.
 
-React - https://reactjs.org/
 NodeJS - https://nodejs.org/en/
 NPM - https://www.npmjs.com/
 
@@ -30,6 +29,5 @@ This will load the application, ready for your use.
 
 This application is fully responsive and can be viewed on poth desktop and mobile devices.
 
-If there is any issues please contact me at mtlj1991@gmail.com
 
 
