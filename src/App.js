@@ -36,7 +36,7 @@ class App extends Component {
         <NavBar />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/:topic" component={TopicsPage} />
-        <Route exact path="/:id/comments" component={CommentsPage} />
+        <Route exact path="/articles/:id/comments" component={CommentsPage} />
         <Route exact path="/users/:username" component={UsersPage} />
       </div>
 
