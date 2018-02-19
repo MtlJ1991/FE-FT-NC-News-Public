@@ -1,5 +1,5 @@
 import React from 'react';
-import {getUserDetails, getUserRepos} from '../Api';
+import {getUserDetails} from '../Api';
 
 
 
