@@ -9,7 +9,6 @@ export const fetchArticles = () => {
 };
 
 export const changeVote = (id, incomingVote) => {
-  console.log(id, incomingVote);
   return fetch(`https://quiet-meadow-47556.herokuapp.com/api/articles/${id}?vote=${incomingVote}`, {method: 'PUT'})
     .then( ()  => fetchArticles());
 };
@@ -19,7 +18,6 @@ export const changeVote = (id, incomingVote) => {
 
 
 export const articlesByTopic = (topic) => {
-  console.log(topic)
   topic =  topic.charAt(0).toUpperCase() + topic.slice(1);
   return fetch(`https://quiet-meadow-47556.herokuapp.com/api/topics/${topic}/articles`, {method: 'GET'})
     .then(res => res.json())
@@ -54,7 +52,6 @@ export const changeCommentVote = (articleId, id, incomingVote) => {
 };
 
 export const addComment = (id, newComment) => {
-  console.log(newComment,'****************', id);
   return fetch(`https://quiet-meadow-47556.herokuapp.com/api/articles/${id}/comments`, {
     method: 'POST',
     headers: new Headers({
