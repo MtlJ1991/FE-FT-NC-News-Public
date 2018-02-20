@@ -2,7 +2,6 @@ import React from 'react';
 import {getUserDetails} from '../Api';
 
 
-
 class UsersPage extends React.Component {
 
     state = {
@@ -44,8 +43,6 @@ class UsersPage extends React.Component {
             </div>
           );
       }
-
-
 }
 
 export default UsersPage;

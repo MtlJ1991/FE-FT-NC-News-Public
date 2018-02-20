@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import HomePage from './components/HomePage'
 import UsersPage from './components/UsersPage'
 import AllUsersPage from './components/AllUsersPage'
-
 import TopicsPage from './components/TopicsPage'
 import CommentsPage from './components/CommentsPage'
 import { BrowserRouter, Route } from "react-router-dom";
@@ -49,5 +48,3 @@ class App extends Component {
 }
 
 export default App;
-
-

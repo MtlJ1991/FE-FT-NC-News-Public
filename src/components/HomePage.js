@@ -3,7 +3,6 @@ import {fetchArticles, changeVote} from '../Api';
 import { Link } from "react-router-dom";
 
 
-
 class HomePage extends React.Component {
 
     state = {
@@ -17,8 +16,6 @@ class HomePage extends React.Component {
           this.setState({ articles: body.articles, loading: false });
         });
 
-
-  
       }
 
       render () {
@@ -49,8 +46,6 @@ class HomePage extends React.Component {
             </div>
           );
       }
-
-
 }
 
 export default HomePage;

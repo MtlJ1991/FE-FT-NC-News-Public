@@ -4,14 +4,12 @@ import { Link } from "react-router-dom";
 import Moment from 'moment';
 
 
-
 class CommentsPage extends React.Component {
 
     state = {
         loading: true,
         comments: [],
-        newComment: ''
-        
+        newComment: '' 
     }
 
     componentDidMount() {
@@ -19,7 +17,6 @@ class CommentsPage extends React.Component {
             this.setState({ comments: body.comments.reverse(), loading: false });
         });
     
-
     }
 
     handleChange = (event) => {
