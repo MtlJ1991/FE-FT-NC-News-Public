@@ -16,8 +16,10 @@ class CommentsPage extends React.Component {
 
     componentDidMount() {
         commentsByArticle(this.props.match.params.id).then(body => {
-            this.setState({ comments: body.comments, loading: false });
+            this.setState({ comments: body.comments.reverse(), loading: false });
         });
+    
+
     }
 
     handleChange = (event) => {
@@ -28,7 +30,12 @@ class CommentsPage extends React.Component {
 
     handleClick = (event) => {
         event.preventDefault();
-        addComment(this.props.match.params.id, this.state.newComment) 
+        addComment(this.props.match.params.id, this.state.newComment)
+        .then(res => {
+            this.setState({
+                comments: res.comments.reverse()
+            })
+        }) 
     }
     render () {
         

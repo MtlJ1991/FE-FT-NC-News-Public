@@ -63,9 +63,8 @@ export const addComment = (id, newComment) => {
       body: newComment
     })
     
-    
   })
-  .then( ()  => commentsByArticle(id));
+  .then((res) => commentsByArticle(id));
 
 };
 
