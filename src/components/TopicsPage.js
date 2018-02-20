@@ -22,7 +22,7 @@ class TopicsPage extends React.Component {
       render () {
           return (
             <div className='homeMain'>
-              <h1>{this.props.match.params.topic} articles.</h1>
+            {this.props.match.params.topic === 'users' ? <h1>Users</h1> : <h1>{this.props.match.params.topic} articles.</h1>}
               {this.state.articles.map((article, i) => {
                 return <div className="card" key={i + 25325432541}>
                   <div className="card-body" key={i + 47654752}>

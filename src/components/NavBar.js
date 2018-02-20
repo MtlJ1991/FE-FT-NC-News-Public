@@ -13,6 +13,8 @@ const NavBar = () => {
           <a className="nav-item" href="/football">Football articles</a>
           <a className="nav-item" href="/cooking">Cooking articles</a>
           <a className="nav-item" href="/coding">Coding articles</a>
+          <a className="nav-item" href="/users">Users</a>
+
         </div>
         
       </nav>

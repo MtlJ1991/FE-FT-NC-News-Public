@@ -1,6 +1,6 @@
 const webAddress = 'https://quiet-meadow-47556.herokuapp.com/api/'
-export const fetchArticles = () => {
 
+export const fetchArticles = () => {
 
   return fetch(`${webAddress}articles`, {method: 'GET'})
     .then(res => res.json())
@@ -86,10 +86,12 @@ export const getUserDetails = (username) => {
 
 };
 
-export const getUserRepos = (username) => {
-  return fetch(`${webAddress}users/${username}/repos`, {method: 'GET'})
+export const fetchUsers = () => {
+
+  return fetch(`${webAddress}users`, {method: 'GET'})
     .then(res => res.json())
-    .then(repos => {
-      return repos;
+    .then(users => {
+      return users;
+      
     });
 };

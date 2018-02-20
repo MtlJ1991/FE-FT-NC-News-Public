@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage'
 import UsersPage from './components/UsersPage'
+import AllUsersPage from './components/AllUsersPage'
 
 import TopicsPage from './components/TopicsPage'
 import CommentsPage from './components/CommentsPage'
@@ -37,6 +38,7 @@ class App extends Component {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/:topic" component={TopicsPage} />
         <Route exact path="/articles/:id/comments" component={CommentsPage} />
+        <Route exact path="/users/" component={AllUsersPage} />
         <Route exact path="/users/:username" component={UsersPage} />
       </div>
 
