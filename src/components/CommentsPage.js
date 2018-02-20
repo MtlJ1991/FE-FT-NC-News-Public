@@ -44,7 +44,7 @@ class CommentsPage extends React.Component {
                 <h1>Comments</h1>
                 <div className='form'>
                  <form className="form-inline">
-                    <div className="form-group mx-sm-3 mb-2">
+                    <div className="form-group">
                         <label htmlFor="inputPassword2" className="sr-only" >Write a comment...</label>
                         <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" value={this.state.newComment} onChange={this.handleChange} />
                     </div>

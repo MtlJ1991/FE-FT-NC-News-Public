@@ -77,14 +77,33 @@ nav {
   grid-column-end: 13;
   color: black;
 }
-
-.form-inline {
-
-  padding-bottom: 10%;
-  padding-left: 40%;
-  display: inline-grid;
+.form{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(50px, auto);
+  font-size: 35px;
+  height: 100%;
+  background-color: hsl(349, 81%, 42%);
+  color: white;
   
 }
+
+.form-inline {
+  grid-column-start: 1;
+  grid-column-end: 13;
+  padding-bottom: 10%;
+  padding-left: 41%;
+  display: inline-grid;
+  width: 300px;
+  
+}
+
+.form-group {
+  width: 100%
+}
+
+
 
 .allUsers {
   color: red;
