@@ -11,14 +11,18 @@ This application is built using react and as such you will need to follow these 
 Much like the BE section, you will need the latest versions of both Node, and NPM.
 Go to the following links and follow the setup instructions.
 
+
+
 NodeJS - https://nodejs.org/en/
 NPM - https://www.npmjs.com/
 
+  1. Clone the repository and CD into the correct directory before following steps two and three.
+  
 
-  1.  Once you are setup it's time to install all of the required dependencies. Run  ```  npm i  ``` In the terminal.
+  2. Once you are setup it's time to install all of the required dependencies. Run  ```  npm i  ``` In the terminal.
 
 
-  2. To run this application you will want to run the following script (which is located in the package.json file)
+  3. To run this application you will want to run the following script (which is located in the package.json file)
 
    ```  npm start  ```
 

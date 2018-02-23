@@ -5,6 +5,7 @@ import HomePage from './components/HomePage'
 import UsersPage from './components/UsersPage'
 import AllUsersPage from './components/AllUsersPage'
 import TopicsPage from './components/TopicsPage'
+import SingleArticlePage from './components/SingleArticlePage'
 import CommentsPage from './components/CommentsPage'
 import { BrowserRouter, Route } from "react-router-dom";
 import ReallySmoothScroll from 'really-smooth-scroll';
@@ -36,6 +37,7 @@ class App extends Component {
         <NavBar />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/:topic" component={TopicsPage} />
+        <Route exact path="/articles/:id" component={SingleArticlePage} />
         <Route exact path="/articles/:id/comments" component={CommentsPage} />
         <Route exact path="/users/" component={AllUsersPage} />
         <Route exact path="/users/:username" component={UsersPage} />

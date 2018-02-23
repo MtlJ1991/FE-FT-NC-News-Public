@@ -24,7 +24,7 @@ class TopicsPage extends React.Component {
               {this.state.articles.map((article, i) => {
                 return <div className="card" key={i + 25325432541}>
                   <div className="card-body" key={i + 47654752}>
-                    <h3>{article.title}</h3>
+                  <Link to={`/articles/${article._id}`}><h3 style={{color: 'black'}}>{article.title}</h3></Link>
                     <p className="card-text" key={i + 65436543}>{article.body}</p>
                   </div>
                   <div className="card-header" key={i + 364344}>
