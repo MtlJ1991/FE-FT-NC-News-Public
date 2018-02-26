@@ -35,13 +35,15 @@ class TopicsPage extends React.Component {
                       <i className='fa fa-angle-up fa-1g up' aria-hidden="true" 
                           onClick={() => changeTopicVote(this.props.match.params.topic,article._id, 'up')
                               .then((body) => {this.setState({articles: body.articles})}
-                            )}></i>
+                            )}>
+                      </i>
 
                       <i className='fa fa-angle-down fa-1g down' aria-hidden="true" 
                           onClick={() => changeTopicVote(this.props.match.params.topic,article._id, 'down')
                               .then((body) => {this.setState({articles: body.articles})}
-                            )}></i>
-                            
+                            )}>
+                      </i>
+
                    </span>
 
                   </div>

@@ -38,12 +38,14 @@ class HomePage extends React.Component {
                             onClick={() => changeVote(article._id, 'up')
                                 .then((articles) => {
                                     this.setState({articles: articles.articles})}
-                                  )}></i>
+                                  )}>
+                      </i>
 
                       <i className='fa fa-angle-down fa-1g down' aria-hidden="true" 
                             onClick={() => changeVote(article._id, 'down')
                                 .then((articles) => {this.setState({articles: articles.articles})}
-                                  )}></i>
+                                  )}>
+                      </i>
 
                       <Link to={article.belongs_to}><p className="card-title" key={i + 1365436541}><i className="fa fa-question fa-1g" aria-hidden="true"></i>   :  {article.belongs_to}</p></Link> 
                       </span>
