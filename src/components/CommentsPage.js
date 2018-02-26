@@ -1,5 +1,5 @@
 import React from 'react';
-import {commentsByArticle, changeCommentVote, addComment, deleteComment} from '../Api';
+import {commentsByArticle, changeCommentVote, addComment, deleteComment, fetchArticles, changeVote} from '../Api';
 import { Link } from "react-router-dom";
 import Moment from 'moment';
 
@@ -9,10 +9,16 @@ class CommentsPage extends React.Component {
     state = {
         loading: true,
         comments: [],
-        newComment: '' 
+        newComment: '',
+        articles: []
     }
 
     componentDidMount() {
+
+        fetchArticles().then(body => {
+            this.setState({ articles: body.articles, loading: false });
+          });
+
         commentsByArticle(this.props.match.params.id).then(body => {
             this.setState({ comments: body.comments.reverse(), loading: false });
         });
@@ -49,7 +55,36 @@ class CommentsPage extends React.Component {
                 </form>
                 </div>
 
+                {this.state.articles.map((article, i) => {
 
+return article._id === this.props.match.params.id ?
+<div className="card" key={i + 1698769871}>
+ <div className="card-body" key={i + 16978698761}>
+   <h3>{article.title}</h3>
+   <p className="card-text" key={i + 1679869871}>{article.body}</p>
+ </div>
+ <div className="card-header" key={i + 1169876987}>
+
+   <span><Link to={`/users/${article.created_by}`}> <p className="card-title" key={i + 1698769781}><i className="fa fa-user fa-1g" aria-hidden="true"></i>  :  {article.created_by}</p></Link>
+#   <p className="card-title" key={i + 1365431}><i className="fa fa-heart fa-1g" aria-hidden="true"></i>   :  {article.votes}</p>
+   <i className='fa fa-angle-up fa-1g up' aria-hidden="true" 
+           onClick={() => changeVote(article._id, 'up')
+               .then((articles) => {
+                   this.setState({articles: articles.articles})}
+                 )}></i>
+
+     <i className='fa fa-angle-down fa-1g down' aria-hidden="true" 
+           onClick={() => changeVote(article._id, 'down')
+               .then((articles) => {this.setState({articles: articles.articles})}
+                 )}></i>
+
+     <Link to={`/${article.belongs_to}`}><p className="card-title" key={i + 1365436541}><i className="fa fa-question fa-1g" aria-hidden="true"></i>   :  {article.belongs_to}</p></Link> 
+   </span>
+
+ </div>
+</div>
+: <p></p>
+})}
 
             {this.state.comments.map((comment, i) => {
                 // {console.log(comment._id)}

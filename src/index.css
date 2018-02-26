@@ -171,6 +171,7 @@ i {
 .trash:hover{
   color: tomato;
   transform: scale(1.5);
+  cursor: pointer;
 }
 
 
