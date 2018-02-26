@@ -154,6 +154,7 @@ i {
 .up:hover {
   color: tomato;
   transform: scale(1.5);
+  cursor: pointer;
 }
 
 .down{
@@ -164,6 +165,7 @@ i {
 .down:hover {
   color: tomato;
   transform: scale(1.5);
+  cursor: pointer;
 }
 
 .trash:hover{

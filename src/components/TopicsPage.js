@@ -28,12 +28,13 @@ class TopicsPage extends React.Component {
                     <p className="card-text" key={i + 65436543}>{article.body}</p>
                   </div>
                   <div className="card-header" key={i + 364344}>
-                  <span><p className="card-title" key={i + 24756742}><Link to={`users/${article.created_by}`}><i className="fa fa-user fa-1g" aria-hidden="true"></i></Link>:  {article.created_by}</p>
-                  <p className="card-title" key={i + 7986975}><Link to={`articles/${article._id}/comments`}><i className="fa fa-comments fa-1g" aria-hidden="true"></i></Link>:   comments </p>
+                   <span>
+                      <Link to={`users/${article.created_by}`}><p className="card-title" key={i + 24756742}><i className="fa fa-user fa-1g" aria-hidden="true"></i>:  {article.created_by}</p></Link> 
+                      <Link to={`articles/${article._id}/comments`}><p className="card-title" key={i + 7986975}><i className="fa fa-comments fa-1g" aria-hidden="true"></i>:   comments </p></Link>
                       <p className="card-title" key={i + 968769876}><i className="fa fa-heart fa-1g" aria-hidden="true"></i>   :  {article.votes}</p>
                       <i className='fa fa-angle-up fa-1g up' aria-hidden="true" onClick={ () => changeTopicVote(this.props.match.params.topic,article._id, 'up').then((body) => {this.setState({articles: body.articles})})}></i>
                       <i className='fa fa-angle-down fa-1g down' aria-hidden="true" onClick={ () => changeTopicVote(this.props.match.params.topic,article._id, 'down').then((body) => {this.setState({articles: body.articles})})}></i>
-                      </span>
+                   </span>
 
                   </div>
                 </div>;

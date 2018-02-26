@@ -7,7 +7,7 @@ import AllUsersPage from './components/AllUsersPage'
 import TopicsPage from './components/TopicsPage'
 import SingleArticlePage from './components/SingleArticlePage'
 import CommentsPage from './components/CommentsPage'
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import ReallySmoothScroll from 'really-smooth-scroll';
 
 ReallySmoothScroll.shim();
@@ -31,8 +31,10 @@ class App extends Component {
 
       <div className="App">
       <div className='login'>
-        <h5 >Northcoder</h5>
+        <Link to={'/users/northcoder'}>
+        <h5 style={{color: 'black'}}>Northcoder</h5>
         <span><img src='https://pbs.twimg.com/profile_images/932373124372410373/-dsqBL8m_400x400.jpg' alt='nc'/></span>
+        </Link>
       </div>
         <NavBar />
         <Route exact path="/" component={HomePage} />
