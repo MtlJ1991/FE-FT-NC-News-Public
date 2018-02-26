@@ -32,7 +32,7 @@ class App extends Component {
       <div className="App">
       <div className='login'>
         <Link to={'/users/northcoder'}>
-        <h5 style={{color: 'black'}}>Northcoder</h5>
+        <h5 style={{color: 'white'}}>Northcoder</h5>
         <span><img src='https://pbs.twimg.com/profile_images/932373124372410373/-dsqBL8m_400x400.jpg' alt='nc'/></span>
         </Link>
       </div>
