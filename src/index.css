@@ -217,6 +217,9 @@ i {
   padding-left: 15px;
 }
 
+.Error{
+  color: red;
+}
 
 
 @media(max-width: 700px) {

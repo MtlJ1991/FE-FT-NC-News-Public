@@ -38,13 +38,15 @@ export const changeTopicVote = (topic ,id, incomingVote) => {
 /////////////////////////////////////////////////////// COMMENTS /////////////////////////////////////////////////////////////////
 
 export const commentsByArticle = (id) => {
-
+  if(id.length === 24) {
   return fetch(`${webAddress}articles/${id}/comments`, {method: 'GET'})
+  
     .then(res => res.json())
     .then(comments => {
       return comments;
     });
-
+  }
+  else return '404';
 };
 
 export const changeCommentVote = (articleId, id, incomingVote) => {
