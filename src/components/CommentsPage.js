@@ -1,6 +1,6 @@
 import React from 'react';
 import {commentsByArticle, changeCommentVote, addComment, deleteComment, fetchArticles, changeVote} from '../Api';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Moment from 'moment';
 
 

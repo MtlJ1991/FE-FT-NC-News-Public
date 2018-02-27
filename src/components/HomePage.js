@@ -1,6 +1,6 @@
 import React from 'react';
 import {fetchArticles, changeVote} from '../Api';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 
 class HomePage extends React.Component {
@@ -23,7 +23,7 @@ class HomePage extends React.Component {
           return (
             <div className='homeMain'>
             <h1>Northcoders News</h1>
-              {this.state.articles.map((article, i) => {
+              {this.props.articles.error ? <Redirect to="/*"/> : this.state.articles.map((article, i) => {
                 return <div className="card" key={i + 1698769871}>
                   <div className="card-body" key={i + 16978698761}>
                   <Link to={`/articles/${article._id}`}><h3 style={{color: 'black'}}>{article.title}</h3></Link>
